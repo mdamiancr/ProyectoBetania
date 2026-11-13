@@ -1,14 +1,183 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parroquia Nuestra Señora del Rosario</title>
+    <title>Barra de Navegación y Banner Responsivo</title>
+    <style>
+        /* Reset básico y configuración de fuente Arial */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+        }
+
+        /* Estilos de la Barra Superior (Navbar) */
+        .navbar {
+            background-color: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1000;
+        }
+
+        /* Contenedor y tamaño del Logo */
+        .logo-container img {
+            max-height: 50px;
+            width: auto;
+            display: block;
+        }
+
+        /* Lista de los 4 botones */
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: #000000; /* Texto negro */
+            font-size: 16px;
+            font-weight: bold;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-links li a:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* Botón hamburguesa (oculto en pantallas grandes) */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            background: none;
+            border: none;
+        }
+
+        .menu-toggle span {
+            width: 28px;
+            height: 3px;
+            background-color: #000000;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        /* Estilos del Banner */
+        .banner {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .banner img {
+            width: 100%;
+            height: auto;
+            max-height: 500px; /* Altura máxima en pantallas grandes */
+            object-fit: cover; /* Evita que la imagen se deforme */
+            display: block;
+        }
+
+        /* Diseño Responsivo (Tablets y Celulares) */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex; /* Muestra el botón en móviles */
+            }
+
+            .nav-links {
+                display: none; /* Oculta los botones por defecto */
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #ffffff;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                padding: 15px 0;
+                text-align: center;
+                gap: 15px;
+            }
+
+            /* Clase que activa el JavaScript al hacer clic */
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li a {
+                display: block;
+                padding: 10px;
+            }
+
+            .banner img {
+                max-height: 300px; /* Altura ajustada para móviles */
+            }
+        }
+    </style>
 </head>
 <body>
 
-    //Inicio de la barra superior
-<p>Hola soy un pagina web en construccion</p>
-    
+    <!-- BARRA SUPERIOR -->
+    <header class="navbar">
+        <!-- Logo en el extremo izquierdo -->
+        <div class="logo-container">
+            <a href="#">
+                <!-- CAMBIAR URL DEL LOGO AQUÍ -->
+                <img src="https://via.placeholder.com/180x50/ffffff/000000?text=TU+LOGO" alt="Logo">
+            </a>
+        </div>
+
+        <!-- Botón de menú para celulares -->
+        <button class="menu-toggle" id="mobile-menu" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- 4 Botones alineados a la derecha -->
+        <nav>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- BANNER DEBAJO DE LA BARRA -->
+    <section class="banner">
+        <!-- CAMBIAR URL DEL BANNER AQUÍ -->
+        <img src="https://via.placeholder.com/1920x500/cccccc/333333?text=TU+IMAGEN+DE+BANNER+AQUI" alt="Banner Principal">
+    </section>
+
+    <!-- JAVASCRIPT PARA EL MENÚ RESPONSIVO -->
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+
+        // Alternar visibilidad del menú en dispositivos móviles
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Cerrar el menú automáticamente al hacer clic en un enlace (en móvil)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+
 </body>
 </html>
