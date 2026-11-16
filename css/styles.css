@@ -118,7 +118,7 @@ body {
 
 /* Cada diapositiva ocupa el 100% del ancho del contenedor principal */
 .slide {
-    width: 25%; /* 100% / 4 imágenes */
+    width: 5%; /* 100% / 4 imágenes */
     flex-shrink: 0;
 }
 
