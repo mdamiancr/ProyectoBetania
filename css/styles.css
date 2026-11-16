@@ -1,0 +1,75 @@
+/* Reseteo básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Contenedor principal que oculta lo que sale de los márgenes */
+.slider-container {
+    width: 100%;
+    max-width: 1000px; /* Ancho máximo del slider en pantallas grandes */
+    margin: 20px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Pista que contiene a todas las imágenes en fila horizontal (4 imágenes = 400% de ancho) */
+.slider-track {
+    display: flex;
+    width: 400%; 
+    animation: slideAnimation 20s infinite ease-in-out; /* 4 imágenes x 5 segundos = 20s en total */
+}
+
+/* Cada diapositiva ocupa el 100% del ancho del contenedor principal */
+.slide {
+    width: 25%; /* 100% / 4 imágenes */
+    flex-shrink: 0;
+}
+
+/* Estilos de las imágenes */
+.slide img {
+    width: 100%;
+    height: auto;
+    max-height: 450px; /* Altura máxima controlada */
+    object-fit: cover; /* Evita que la imagen se deforme */
+    display: block;
+}
+
+/* Animación de desplazamiento a la izquierda con pausas en cada fotograma */
+@keyframes slideAnimation {
+    0%   { transform: translateX(0%); }
+    20%  { transform: translateX(0%); }
+    
+    25%  { transform: translateX(-25%); }
+    45%  { transform: translateX(-25%); }
+    
+    50%  { transform: translateX(-50%); }
+    70%  { transform: translateX(-50%); }
+    
+    75%  { transform: translateX(-75%); }
+    95%  { transform: translateX(-75%); }
+    
+    100% { transform: translateX(0%); } /* Vuelve al inicio de forma fluida */
+}
+
+/* Diseño Responsivo para Celulares */
+@media (max-width: 768px) {
+    .slider-container {
+        margin: 10px;
+        border-radius: 4px;
+    }
+
+    .slide img {
+        max-height: 250px; /* Altura más compacta para móviles */
+    }
+}
