@@ -124,7 +124,23 @@
     }
 </style>
 
-<!-- HTML DEL CONTENEDOR DE 4 TARJETAS -->
+    <!-- JAVASCRIPT PARA EL MENÚ RESPONSIVO -->
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+
+    <!-- HTML DEL CONTENEDOR DE 4 TARJETAS -->
 <section class="cards-section">
     <div class="cards-container">
         
@@ -175,20 +191,5 @@
     </div>
 </section>
 
-    <!-- JAVASCRIPT PARA EL MENÚ RESPONSIVO -->
-    <script>
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navLinks = document.getElementById('nav-links');
-
-        mobileMenu.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
-        });
-    </script>
 </body>
 </html>
