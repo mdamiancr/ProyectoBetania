@@ -1,4 +1,3 @@
-/* Reseteo básico */
 /* Reset básico y configuración de fuente Arial */
 * {
     margin: 0;
@@ -19,7 +18,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1px 5%;
+    padding: 15px 5%;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 1000;
@@ -116,9 +115,9 @@ body {
     animation: slideAnimation 20s infinite ease-in-out; /* 4 imágenes x 5 segundos = 20s en total */
 }
 
-/* Cada diapositiva ocupa el 100% del ancho del contenedor principal */
+/* Cada diapositiva ocupa el 25% del ancho del contenedor principal (100% / 4) */
 .slide {
-    width: 5%; /* 100% / 4 imágenes */
+    width: 25%; 
     flex-shrink: 0;
 }
 
