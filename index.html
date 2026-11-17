@@ -40,6 +40,141 @@
         <img src="img/banner.JPG" alt="Banner Parroquia">
     </section>
 
+    <!-- ESTILOS DEL CONTENEDOR DE TARJETAS -->
+<style>
+    .cards-section {
+        display: flex;
+        justify-content: center;
+        padding: 40px 20px;
+        width: 100%;
+    }
+
+    .cards-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 4 columnas en pantallas grandes */
+        gap: 20px;
+        max-width: 1200px;
+        width: 100%;
+    }
+
+    .card {
+        background-color: #ffffff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .card-image {
+        width: 100%;
+        height: 180px;
+        overflow: hidden;
+    }
+
+    .card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.3s ease;
+    }
+
+    .card:hover .card-image img {
+        transform: scale(1.05);
+    }
+
+    .card-content {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        flex-grow: 1;
+    }
+
+    .card-title {
+        font-size: 18px;
+        color: #333333;
+        font-weight: bold;
+    }
+
+    .card-text {
+        font-size: 14px;
+        color: #666666;
+        line-height: 1.5;
+    }
+
+    /* Responsivo */
+    @media (max-width: 1024px) {
+        .cards-container {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 600px) {
+        .cards-container {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<!-- HTML DEL CONTENEDOR DE 4 TARJETAS -->
+<section class="cards-section">
+    <div class="cards-container">
+        
+        <!-- Tarjeta 1 -->
+        <div class="card">
+            <div class="card-image">
+                <img src="img/iglesia1.jpg" alt="Tarjeta 1">
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">Título 1</h3>
+                <p class="card-text">Texto descriptivo para la primera tarjeta.</p>
+            </div>
+        </div>
+
+        <!-- Tarjeta 2 -->
+        <div class="card">
+            <div class="card-image">
+                <img src="img/iglesia2.jpg" alt="Tarjeta 2">
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">Título 2</h3>
+                <p class="card-text">Texto descriptivo para la segunda tarjeta.</p>
+            </div>
+        </div>
+
+        <!-- Tarjeta 3 -->
+        <div class="card">
+            <div class="card-image">
+                <img src="img/iglesia3.png" alt="Tarjeta 3">
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">Título 3</h3>
+                <p class="card-text">Texto descriptivo para la tercera tarjeta.</p>
+            </div>
+        </div>
+
+        <!-- Tarjeta 4 -->
+        <div class="card">
+            <div class="card-image">
+                <img src="img/iglesia4.jpg" alt="Tarjeta 4">
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">Título 4</h3>
+                <p class="card-text">Texto descriptivo para la cuarta tarjeta.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
     <!-- JAVASCRIPT PARA EL MENÚ RESPONSIVO -->
     <script>
         const mobileMenu = document.getElementById('mobile-menu');
